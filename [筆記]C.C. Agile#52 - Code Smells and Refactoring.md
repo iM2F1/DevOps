@@ -1,8 +1,8 @@
 [筆記]C.C. Agile#52 - Code Smells and Refactoring
 ===
 
-![Stanly Lau](https://i.imgur.com/dtNvbgQ.jpg)
 
+![Stanly Lau](https://i.imgur.com/dtNvbgQ.jpg)
 
 ### 1.Bad smell Code 怎麼來?
     廢話~不就工程師自己寫的??
@@ -22,7 +22,7 @@
     
 ### 2.為什麼要解 Bad Code
     1.看到凌亂的桌子不會想整理嗎?
-    2.擺滿了東西怎麼在放新的東西呢?
+    2.擺滿了東西怎麼再放新的東西呢?
     3.結論，如果你還想繼續用你的桌子就整理，就這麼簡單。
 
 ### 3.Refectoring 該於何時執行?
@@ -50,7 +50,16 @@
     6.Rename
 
 ### 以上自己連連看，誰叫你沒有來聽課 XD
-    
+
+
+### Reference
+
+[primitive obsession](https://sourcemaking.com/refac.../smells/primitive-obsession)
+
+[Code Smell](https://sourcemaking.com/refactoring/smells)
+
+[Refactoring techniques](https://sourcemaking.com/refactoring/refactorings)
+
 
 
 
