@@ -21,18 +21,40 @@
     public class TimeProvidor
     {
         private static DateTime current = DateTime.Now;
+        private string DateTimeFormatStr = "yyyy-MM-dd hh:mm:ss.ff";
+        private string MockDateTime { get; set; }
 
+        //*
+        public DateTime Current
+        {
+            get
+            {
+                if (MockDateTime == string.Empty)
+                    current = DateTime.Now;
+                else
+                    current = DateTime.Parse(MockDateTime);
+                return current;
+            }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException("value");
+                MockDateTime = value.ToString(DateTimeFormatStr);
+            }
+        }
+                //*/
         public string GetNowString()
         {
-            return current.ToString("yyyy-MM-dd hh:mm:ss.zz");
+            return Current.ToString(DateTimeFormatStr);
         }
-        public TimeProvidor(string MockDateTime)
+        internal TimeProvidor(string MockDateTime)
         {
-            current = DateTime.Parse(MockDateTime);
+            this.MockDateTime = MockDateTime;
         }
         public TimeProvidor()
         {
-            current = DateTime.Now;
+            this.MockDateTime = string.Empty;
+            //Current = DateTime.Now;
         }
     }
 
@@ -42,6 +64,9 @@
 ### UnitTest.cs
 ```
 
+    [TestClass]
+    public class TimeTest
+    {
         private string ExpectNowString { get;  set; }
         [TestMethod]
         public void MockDateTime()
@@ -49,7 +74,8 @@
             string MockDateTimeStr = "2017-04-20 20:22:39.21";
             TimeProvidor TP = new TimeProvidor(MockDateTimeStr);
             DateTime mockDT = DateTime.Parse(MockDateTimeStr);
-            ExpectNowString = mockDT.ToString("yyyy-MM-dd hh:mm:ss.zz");
+            //mockDT = mockDT.AddSeconds(1);
+            ExpectNowString = mockDT.ToString("yyyy-MM-dd hh:mm:ss.ff");
             Assert.AreEqual(ExpectNowString, TP.GetNowString());
         }
         [TestMethod]
@@ -57,9 +83,12 @@
         {
             TimeProvidor TP = new TimeProvidor();
             DateTime mockDT = DateTime.Now;
-            ExpectNowString = mockDT.ToString("yyyy-MM-dd hh:mm:ss.zz");
+            ExpectNowString = mockDT.ToString("yyyy-MM-dd hh:mm:ss.ff");
             Assert.AreEqual(ExpectNowString, TP.GetNowString());
         }
+
+
+    }
 
 
 ```
