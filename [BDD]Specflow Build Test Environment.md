@@ -1,6 +1,6 @@
 [BDD]Specflow Build Test Environment 
 ===
-# Two Session that we need to talk 1.Feature 2.Steps 3.Test Orders
+## Three more Sessions that we need to talk 1.Feature 2.Steps 3.Test Orders
 - if you have something for the whole feature 
 - otherwise write in the Steps 
 
