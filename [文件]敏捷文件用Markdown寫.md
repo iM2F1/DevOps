@@ -102,7 +102,10 @@
 
 
 # 或者是想做書簽
-- Tag 好了其實書籤就在右邊 Side Bar
+- 使用[Toc]Tag
+- ~~Tag 好了其實書籤就在右邊 Side Bar~~
+[Toc]
+
 
 ---
 
@@ -120,3 +123,5 @@
 # 最後來個 Kahoot.it 小遊戲，太刺激了。
 
 ---
+
+[官方文件參考](https://hackmd.io/features#share-notes)
